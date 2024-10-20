@@ -53,8 +53,8 @@ public class CheckIfMemberTest {
 
     @Test
     public void checkMemberStatusTest() {
-        assertTrue(cim.checkMemberStatus("Diamanda Djedi", testMembers).equals(MemberStatus.MEMBER));
-        assertTrue(cim.checkMemberStatus("8204021234", testMembers).equals(MemberStatus.FORMER_MEMBER));
+        assertEquals(cim.checkMemberStatus("Diamanda Djedi", testMembers), MemberStatus.MEMBER);
+        assertEquals(cim.checkMemberStatus("8204021234", testMembers), MemberStatus.FORMER_MEMBER);
         assertTrue(cim.checkMemberStatus("Gemma Giraff", testMembers).equals(MemberStatus.NOT_MEMBER));
         assertFalse(cim.checkMemberStatus("9302114567", testMembers).equals(MemberStatus.MEMBER));
     }

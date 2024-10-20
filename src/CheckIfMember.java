@@ -48,10 +48,6 @@ public class CheckIfMember {
         return customerInfoToCompare;
     }
 
-    protected boolean isMembershipValid(GymMembers gm) {
-        return gm.getLatestPayment().isAfter(LocalDate.now().minusYears(1));
-    }
-
     public MemberStatus checkMemberStatus(String customerInfo, ArrayList<GymMembers> gmList) {
         VisitLog vl = new VisitLog();
         for (GymMembers gm : gmList) {
@@ -65,6 +61,10 @@ public class CheckIfMember {
             }
         }
         return MemberStatus.NOT_MEMBER;
+    }
+
+    protected boolean isMembershipValid(GymMembers gm) {
+        return gm.getLatestPayment().isAfter(LocalDate.now().minusYears(1));
     }
 
     public String printMembershipStatus(MemberStatus memberStatus) {

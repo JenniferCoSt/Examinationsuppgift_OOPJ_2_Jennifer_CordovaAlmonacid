@@ -18,11 +18,12 @@ public class VisitLogTest {
 
     @Test
     public void writeVisitToFileTest() throws IOException {
-        Path pathTest = Paths.get("test/testVisitLog.txt");
+
         boolean isTest = true;
         vl.writeVisitToFile(gm1, isTest);
         vl.writeVisitToFile(gm2, isTest);
 
+        Path pathTest = Paths.get("test/testVisitLog.txt");
         String readFromFile = Files.readString(pathTest);
 
         assertTrue(readFromFile.contains("Alhambra Aromes"));
