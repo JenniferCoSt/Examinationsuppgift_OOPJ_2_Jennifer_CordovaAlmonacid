@@ -9,12 +9,14 @@ public class GymMembersTest {
     GymMembers gm = new GymMembers();
 
     @Test
-    public void setSocSecNumAndNameTest() {
+    public void setPersonalInfoTest() {
         String gmTest = "8910233981, Gemma Giraff";
         gm.setPersonalInfo(gmTest);
 
         assertTrue("8910233981".equals(gm.getSocialSecurityNumber()));
         assertTrue("Gemma Giraff".equals(gm.getName()));
+        assertFalse("891023398X".equals(gm.getSocialSecurityNumber()));
+        assertFalse("Gemma GiraffX".equals(gm.getName()));
 
     }
 
@@ -27,5 +29,4 @@ public class GymMembersTest {
         assertEquals(expectedDate, gm.getLatestPayment());
         assertNotEquals(unexpectedDate, gm.getLatestPayment());
     }
-
 }

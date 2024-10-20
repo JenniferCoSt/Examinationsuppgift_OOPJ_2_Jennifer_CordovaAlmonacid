@@ -36,6 +36,4 @@ public class VisitLogTest {
         assertEquals("7703021234, Alhambra Aromes\n" + dtf.format(LocalDateTime.now()) + "\n", vl.formatVisitLog(gm1));
         assertNotEquals("7703021234, Alhambra AromesX\n" + dtf.format(LocalDateTime.now()) + "\n", vl.formatVisitLog(gm1));
     }
-
-
 }

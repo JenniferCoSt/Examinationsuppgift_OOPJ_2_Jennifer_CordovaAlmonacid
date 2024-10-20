@@ -9,13 +9,11 @@ import java.time.format.DateTimeFormatter;
 
 public class VisitLog {
 
-    boolean isTest = false;
     Path toLog;
 
     public void writeVisitToFile(GymMembers gm, boolean isTest) {
         if (isTest) {
-            toLog = Paths.get("test/testVi" +
-                    "sitLog.txt");
+            toLog = Paths.get("test/testVisitLog.txt");
         } else {
             toLog = Paths.get("src/visitlog.txt");
         }
@@ -26,7 +24,7 @@ public class VisitLog {
             bw.write(formatVisitLog(gm));
 
         } catch (IOException e) {
-            System.out.println("File not found" + e.getMessage());
+            System.out.println("Filen gick inte att hitta." + e.getMessage());
         } catch (Exception e) {
             e.printStackTrace();
         }

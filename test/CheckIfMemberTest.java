@@ -41,17 +41,6 @@ public class CheckIfMemberTest {
 
 
     }
-/*
-    @Test
-    public void isOnMembersListTest() {
-        assertTrue(cim.isOnMembersList(testMembers.getFirst().getSocialSecurityNumber()));
-        assertTrue(cim.isOnMembersList(testMembers.getLast().getName()));
-        assertFalse(cim.isOnMembersList("Gemma Giraff"));
-        assertFalse(cim.isOnMembersList("6902291234"));
-
-    }
-
- */
 
     @Test
     public void isMembershipValidTest() {
@@ -77,5 +66,4 @@ public class CheckIfMemberTest {
         assertTrue(cim.printMembershipStatus(MemberStatus.NOT_MEMBER).equals("Personen är inte medlem."));
         assertFalse(cim.printMembershipStatus(MemberStatus.MEMBER).equals("Personen är inte medlem."));
     }
-
 }

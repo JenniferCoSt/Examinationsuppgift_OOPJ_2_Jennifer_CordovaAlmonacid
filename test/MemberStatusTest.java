@@ -11,5 +11,4 @@ class MemberStatusTest {
         assertEquals("inte medlem", MemberStatus.NOT_MEMBER.status);
         assertNotEquals("medlem", MemberStatus.FORMER_MEMBER.status);
     }
-
 }
